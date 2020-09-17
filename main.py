@@ -7,16 +7,17 @@
 
 # Calculate the sum of 1+2+3+... + n by recursive function
 def sum_n(n):
-  c=0
-  for l in range(0,n+1):
-    c= c+l
-    l= (l+1)
-  return c
+  if n>0:
+    return n+ sum_n(n-1)
+  else:
+    return n
 
 # Print string s one in a new line n times by recursive function
 def print_n(s,n):
-  for d in range(0,n):
+  if n>0:
     print(f"{s}")
+    print_n(s,n-1)
+  
 
 def run():
  n= int(input("Enter an int: "))
